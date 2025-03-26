@@ -1,0 +1,7 @@
+.cv-container {
+    width: calc(100vw - 2rem);
+    min-width: 400px;
+    max-width: 794px; /* Corresponds to width of A4 paper */
+    min-height: 20rem;
+    border: 1px solid black;
+}
