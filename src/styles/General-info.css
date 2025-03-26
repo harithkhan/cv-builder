@@ -1,9 +1,35 @@
 .general-info-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;    
+    flex-wrap: wrap; 
+    gap: 1rem;
 }
 
-.cv-title {
+.general-info-left {
+    max-width: 30rem;
+}
 
+.general-info-right {
+
+}
+
+.summary {
+    line-height: 1.1;
+}
+
+.phone-number,
+.email,
+.address-line-1,
+.address-line-2,
+.postcode,
+.country {
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    .general-info-container {
+        gap: 2rem;
+    }
+    .cv-title {
+        font-size: 2rem;
+    }
 }
