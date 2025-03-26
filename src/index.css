@@ -42,4 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
