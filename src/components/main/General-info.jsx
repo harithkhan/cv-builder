@@ -15,6 +15,7 @@ export default function GeneralInfo() {
                 <p className="postcode">57000, <span className="state">Kuala Lumpur</span></p>
                 <p className="country">Malaysia</p>
             </div>
+            <hr className="general-info-break" />
         </div>
     )
 }
