@@ -1,0 +1,12 @@
+header {
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.7rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-icon {
+    width: 3rem;
+    height: auto;
+}
