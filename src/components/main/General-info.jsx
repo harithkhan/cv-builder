@@ -1,5 +1,6 @@
 import "../../styles/General-info.css";
 import EditButton from "./Edit-button";
+import ConfirmButton from "./Confirm-button";
 import { useState } from "react";
 
 export default function GeneralInfo() {
@@ -22,15 +23,18 @@ export default function GeneralInfo() {
             <div className="general-info-left">
                 <div className="cv-title-container">
                     {isEditingTitle ? (
-                        <form className="cv-title-form" onSubmit={handleCVTitleFormSubmit}>
-                            <input
-                                type="text"
-                                value={inputValue}
-                                className="cv-title-input"
-                                onChange={(event) => setInputValue(event.target.value)}
-                                autoFocus
-                            />
-                        </form>
+                        <>
+                            <form className="cv-title-form" onSubmit={handleCVTitleFormSubmit}>
+                                <input
+                                    type="text"
+                                    value={inputValue}
+                                    className="cv-title-input"
+                                    onChange={(event) => setInputValue(event.target.value)}
+                                    autoFocus
+                                />
+                            </form>
+                            <ConfirmButton onClick={handleCVTitleFormSubmit}/>
+                        </>
                     ): (
                         <>
                             <h2 className="cv-title">{cvTitle}</h2>
