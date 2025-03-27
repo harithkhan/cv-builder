@@ -41,6 +41,10 @@ export default function GeneralInfo() {
         setIsEditingSummary(false);
     }
 
+    function handleSummaryCancelClick() {
+        setIsEditingSummary(false);
+    }
+
     return (
         <div className="general-info-container">
             <div className="general-info-left">
@@ -75,6 +79,8 @@ export default function GeneralInfo() {
                         autoFocus
                         rows={4}
                         />
+                        <ConfirmButton onClick={handleSummaryFormSubmit}/>
+                        <CancelButton onClick={handleSummaryCancelClick}/>
                     </form>
                 ) : 
                     <div className="summary-container">
