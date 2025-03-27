@@ -1,6 +1,7 @@
 :root {
     --roboto: "Roboto", Arial, Helvetica, sans-serif;
-    --playfair-display: "Playfair Display", "Times New Roman", Times, serif
+    --playfair-display: "Playfair Display", "Times New Roman", Times, serif;
+    --cv-width: 794px; /* Corresponds with A4 paper */
 }
 
 .app-container {

@@ -70,7 +70,7 @@ export default function GeneralInfo() {
                     <form onSubmit={handleSummaryFormSubmit} className="summary-form">
                         <textarea
                         value={summaryInputValue}
-                        className="cv-title-input"
+                        className="summary-input"
                         onChange={(event) => setSummaryInputValue(event.target.value)}
                         autoFocus
                         rows={4}

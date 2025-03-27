@@ -21,6 +21,15 @@
     line-height: 1.1;
 }
 
+.summary-form {
+    width: calc(100vw - 4rem);
+}
+
+.summary-input {
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+}
+
 .phone-number,
 .email,
 .address-line-1,
@@ -45,5 +54,8 @@
     }
     .cv-title {
         font-size: 2rem;
+    }
+    .summary-form {
+        width: calc(var(--cv-width) - 20rem);
     }
 }
