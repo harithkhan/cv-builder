@@ -5,22 +5,40 @@ import CancelButton from "./Cancel-button";
 import { useState } from "react";
 
 export default function GeneralInfo() {
+    // Title State
     const [isEditingTitle, setIsEditingTitle] = useState(false);
     const [cvTitle, setCvTitle] = useState("Harith Khan");
-    const [inputValue, setInputValue] = useState(cvTitle);
+    const [titleInputValue, setTitleInputValue] = useState(cvTitle);
 
-    function handleEditClick() {
+    // Summary State
+    const [isEditingSummary, setIsEditingSummary] = useState(false);
+    const [summary, setSummary] = useState("Indie developer with an interest in b2b web development. Gym and restauranting in free time.");
+    const [summaryInputValue, setSummaryInputValue] = useState(summary);
+
+    // Title Functions
+    function handleEditTitleClick() {
         setIsEditingTitle(true);
     }
 
     function handleCVTitleFormSubmit(event) {
         event.preventDefault();
-        setCvTitle(inputValue);
+        setCvTitle(titleInputValue);
         setIsEditingTitle(false);
     }
 
-    function handleCancelClick() {
+    function handleCancelTitleClick() {
         setIsEditingTitle(false);
+    }
+
+    // Summary Functions
+    function handleEditSummaryClick() {
+        setIsEditingSummary(true);
+    }
+
+    function handleSummaryFormSubmit(event) {
+        event.preventDefault();
+        setSummary(summaryInputValue);
+        setIsEditingSummary(false);
     }
 
     return (
@@ -32,23 +50,38 @@ export default function GeneralInfo() {
                             <form className="cv-title-form" onSubmit={handleCVTitleFormSubmit}>
                                 <input
                                     type="text"
-                                    value={inputValue}
+                                    value={titleInputValue}
                                     className="cv-title-input"
-                                    onChange={(event) => setInputValue(event.target.value)}
+                                    onChange={(event) => setTitleInputValue(event.target.value)}
                                     autoFocus
                                 />
                             </form>
                             <ConfirmButton onClick={handleCVTitleFormSubmit}/>
-                            <CancelButton onClick={handleCancelClick}/>
+                            <CancelButton onClick={handleCancelTitleClick}/>
                         </>
                     ): (
                         <>
                             <h2 className="cv-title">{cvTitle}</h2>
-                            <EditButton onClick={handleEditClick}/>
+                            <EditButton onClick={handleEditTitleClick}/>
                         </>
                     )}
                 </div>
-                <p className="summary">Indie developer with an interest in b2b web development. Gym and restauranting in free time.</p>
+                {isEditingSummary ? (
+                    <form onSubmit={handleSummaryFormSubmit} className="summary-form">
+                        <textarea
+                        value={summaryInputValue}
+                        className="cv-title-input"
+                        onChange={(event) => setSummaryInputValue(event.target.value)}
+                        autoFocus
+                        rows={4}
+                        />
+                    </form>
+                ) : 
+                    <div className="summary-container">
+                        <p className="summary">{summary}</p>
+                        <EditButton onClick={handleEditSummaryClick}/>
+                    </div>
+                }
             </div>
             <div className="general-info-right">
                 <p className="phone-number">60163365111</p>

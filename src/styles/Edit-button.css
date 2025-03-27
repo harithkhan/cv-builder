@@ -34,6 +34,7 @@
         visibility: hidden;
     }
     .cv-title-container:hover .edit-button,
+    .summary-container:hover .edit-button,
     .edit-button:focus-within {
         visibility: visible;
   }

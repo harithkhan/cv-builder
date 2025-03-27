@@ -12,6 +12,10 @@
     display: flex;
 }
 
+.summary-container {
+    display: flex;
+}
+
 .summary {
     line-height: 1.1;
 }
