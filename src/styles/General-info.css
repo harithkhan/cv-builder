@@ -14,6 +14,7 @@
 
 .summary-container {
     display: flex;
+    align-items: center;
 }
 
 .summary {
