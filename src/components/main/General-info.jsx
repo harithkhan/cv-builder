@@ -1,6 +1,7 @@
 import "../../styles/General-info.css";
 import EditButton from "./Edit-button";
 import ConfirmButton from "./Confirm-button";
+import CancelButton from "./Cancel-button";
 import { useState } from "react";
 
 export default function GeneralInfo() {
@@ -15,6 +16,10 @@ export default function GeneralInfo() {
     function handleCVTitleFormSubmit(event) {
         event.preventDefault();
         setCvTitle(inputValue);
+        setIsEditingTitle(false);
+    }
+
+    function handleCancelClick() {
         setIsEditingTitle(false);
     }
 
@@ -34,6 +39,7 @@ export default function GeneralInfo() {
                                 />
                             </form>
                             <ConfirmButton onClick={handleCVTitleFormSubmit}/>
+                            <CancelButton onClick={handleCancelClick}/>
                         </>
                     ): (
                         <>
