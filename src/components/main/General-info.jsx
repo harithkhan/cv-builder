@@ -1,13 +1,42 @@
 import "../../styles/General-info.css";
 import EditButton from "./Edit-button";
+import { useState } from "react";
 
 export default function GeneralInfo() {
+    const [isEditingTitle, setIsEditingTitle] = useState(false);
+    const [cvTitle, setCvTitle] = useState("Harith Khan");
+    const [inputValue, setInputValue] = useState(cvTitle);
+
+    function handleEditClick() {
+        setIsEditingTitle(true);
+    }
+
+    function handleCVTitleFormSubmit(event) {
+        event.preventDefault();
+        setCvTitle(inputValue);
+        setIsEditingTitle(false);
+    }
+
     return (
         <div className="general-info-container">
             <div className="general-info-left">
                 <div className="cv-title-container">
-                    <h2 className="cv-title">Harith Khan</h2>
-                    <EditButton />
+                    {isEditingTitle ? (
+                        <form className="cv-title-form" onSubmit={handleCVTitleFormSubmit}>
+                            <input
+                                type="text"
+                                value={inputValue}
+                                className="cv-title-input"
+                                onChange={(event) => setInputValue(event.target.value)}
+                                autoFocus
+                            />
+                        </form>
+                    ): (
+                        <>
+                            <h2 className="cv-title">{cvTitle}</h2>
+                            <EditButton onClick={handleEditClick}/>
+                        </>
+                    )}
                 </div>
                 <p className="summary">Indie developer with an interest in b2b web development. Gym and restauranting in free time.</p>
             </div>
