@@ -8,6 +8,11 @@
     max-width: 30rem;
 }
 
+.cv-title-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .summary {
     line-height: 1.1;
 }
