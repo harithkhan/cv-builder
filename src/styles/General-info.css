@@ -30,6 +30,12 @@
     padding: 0.5rem 0.8rem;
 }
 
+.summary-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 .phone-number,
 .email,
 .address-line-1,

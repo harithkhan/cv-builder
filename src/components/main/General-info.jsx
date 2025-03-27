@@ -79,8 +79,10 @@ export default function GeneralInfo() {
                         autoFocus
                         rows={4}
                         />
-                        <ConfirmButton onClick={handleSummaryFormSubmit}/>
-                        <CancelButton onClick={handleSummaryCancelClick}/>
+                        <div className="summary-button-container">
+                            <ConfirmButton onClick={handleSummaryFormSubmit}/>
+                            <CancelButton onClick={handleSummaryCancelClick}/>
+                        </div>
                     </form>
                 ) : 
                     <div className="summary-container">
