@@ -8,6 +8,15 @@
     max-width: 30rem;
 }
 
+.general-info-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.general-info-right .edit-button {
+    align-self: start;
+}
+
 .cv-title-container {
     display: flex;
 }

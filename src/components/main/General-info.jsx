@@ -92,12 +92,15 @@ export default function GeneralInfo() {
                 }
             </div>
             <div className="general-info-right">
-                <p className="phone-number">60163365111</p>
-                <p className="email">harith.akma@dontudare.com</p>
-                <p className="address-line-1">25, Jalan 8/152A</p>
-                <p className="address-line-2">Bukit Halil</p>
-                <p className="postcode">57000, <span className="state">Kuala Lumpur</span></p>
-                <p className="country">Malaysia</p>
+                <div className="misc-info-container">
+                    <p className="phone-number">60163365111</p>
+                    <p className="email">harith.akma@dontudare.com</p>
+                    <p className="address-line-1">25, Jalan 8/152A</p>
+                    <p className="address-line-2">Bukit Halil</p>
+                    <p className="postcode">57000, <span className="state">Kuala Lumpur</span></p>
+                    <p className="country">Malaysia</p>
+                </div>
+                <EditButton />
             </div>
             <hr className="general-info-break" />
         </div>
