@@ -62,7 +62,7 @@ export default function GeneralInfo() {
     function handleEditGeneralInfoClick() {
         setIsEditingGeneralInfo(true);
     }
-    function handleEditGeneralFormSubmit(event) {
+    function handleGeneralInfoFormSubmit(event) {
         event.preventDefault();
         setPhone(phoneInputValue);
         setEmail(emailInputValue);
@@ -71,6 +71,10 @@ export default function GeneralInfo() {
         setPostCode(postCodeInputValue);
         setCity(cityInputValue);
         setCountry(countryInputValue);
+        setIsEditingGeneralInfo(false);
+    }
+    function handleGeneralInfoCancelClick() {
+        setIsEditingGeneralInfo(false);
     }
 
     return (
@@ -121,7 +125,7 @@ export default function GeneralInfo() {
             </div>
             <div className="general-info-right">
                 {isEditingGeneralInfo ? (
-                    <form className="general-info-form" onSubmit={handleEditGeneralFormSubmit}>
+                    <form className="general-info-form" onSubmit={handleGeneralInfoFormSubmit}>
                         <input
                             type="tel"
                             value={phoneInputValue}
@@ -143,13 +147,13 @@ export default function GeneralInfo() {
                         />
                         <input
                             type="text"
-                            value={addressLineTwo}
+                            value={addressLineTwoInputValue}
                             className="address-line-two-input"
                             onChange={(event) => setAddressLineTwoInputValue(event.target.value)}
                         />
                         <input
                             type="tel"
-                            value={postCode}
+                            value={postCodeInputValue}
                             className="postcode-input"
                             onChange={(event) => setPostCodeInputValue(event.target.value)}
                         />
@@ -165,16 +169,20 @@ export default function GeneralInfo() {
                             className="country-input"
                             onChange={(event) => setCountryInputValue(event.target.value)}
                         />
+                        <div className="general-info-form-button-container">
+                            <ConfirmButton onClick={handleGeneralInfoFormSubmit}/>
+                            <CancelButton onClick={handleGeneralInfoCancelClick}/>
+                        </div>
                     </form>
                 ): (
                     <>
                         <div className="misc-info-container">
-                            <p className="phone-number">60163365111</p>
-                            <p className="email">harith.akma@dontudare.com</p>
-                            <p className="address-line-1">25, Jalan 8/152A</p>
-                            <p className="address-line-2">Bukit Halil</p>
-                            <p className="postcode">57000<span className="state">, Kuala Lumpur</span></p>
-                            <p className="country">Malaysia</p>
+                            <p className="phone-number">{phone}</p>
+                            <p className="email">{email}</p>
+                            <p className="address-line-1">{addressLineOne}</p>
+                            <p className="address-line-2">{addressLineTwo}</p>
+                            <p className="postcode">{postCode}<span className="state">, {city}</span></p>
+                            <p className="country">{country}</p>
                         </div>
                         <EditButton onClick={handleEditGeneralInfoClick}/>
                     </>

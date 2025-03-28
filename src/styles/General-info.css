@@ -45,6 +45,12 @@
     gap: 1rem;
 }
 
+.general-info-form-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 .phone-number,
 .email,
 .address-line-1,
