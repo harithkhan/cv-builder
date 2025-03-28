@@ -19,13 +19,11 @@ export default function GeneralInfo() {
     function handleEditTitleClick() {
         setIsEditingTitle(true);
     }
-
     function handleCVTitleFormSubmit(event) {
         event.preventDefault();
         setCvTitle(titleInputValue);
         setIsEditingTitle(false);
     }
-
     function handleCancelTitleClick() {
         setIsEditingTitle(false);
     }
@@ -34,13 +32,11 @@ export default function GeneralInfo() {
     function handleEditSummaryClick() {
         setIsEditingSummary(true);
     }
-
     function handleSummaryFormSubmit(event) {
         event.preventDefault();
         setSummary(summaryInputValue);
         setIsEditingSummary(false);
     }
-
     function handleSummaryCancelClick() {
         setIsEditingSummary(false);
     }
