@@ -15,6 +15,23 @@ export default function GeneralInfo() {
     const [summary, setSummary] = useState("Indie developer with an interest in b2b web development. Gym and restauranting in free time.");
     const [summaryInputValue, setSummaryInputValue] = useState(summary);
 
+    // General Info State
+    const [isEditingGeneralInfo, setIsEditingGeneralInfo] = useState(false);
+    const [phone, setPhone] = useState("+60163365111");
+    const [phoneInputValue, setPhoneInputValue] = useState(phone);
+    const [email, setEmail] = useState("harith@dontudare.com");
+    const [emailInputValue, setEmailInputValue] = useState(email);
+    const [addressLineOne, setAddressLineOne] = useState("24, Jalan 151A");
+    const [addressLineOneInputValue, setAddressLineOneInputValue] = useState(addressLineOne);
+    const [addressLineTwo, setAddressLineTwo] = useState("Bukit Jalil");
+    const [addressLineTwoInputValue, setAddressLineTwoInputValue] = useState(addressLineTwo);
+    const [postCode, setPostCode] = useState("57000");
+    const [postCodeInputValue, setPostCodeInputValue] = useState(postCode);
+    const [city, setCity] = useState("Kuala Lumpur");
+    const [cityInputValue, setCityInputValue] = useState(city);
+    const [country, setCountry] = useState("Malaysia");
+    const [countryInputValue, setCountryInputValue] = useState(country);
+
     // Title Functions
     function handleEditTitleClick() {
         setIsEditingTitle(true);
@@ -39,6 +56,21 @@ export default function GeneralInfo() {
     }
     function handleSummaryCancelClick() {
         setIsEditingSummary(false);
+    }
+
+    // General Info Functions
+    function handleEditGeneralInfoClick() {
+        setIsEditingGeneralInfo(true);
+    }
+    function handleEditGeneralFormSubmit(event) {
+        event.preventDefault();
+        setPhone(phoneInputValue);
+        setEmail(emailInputValue);
+        setAddressLineOne(addressLineOneInputValue);
+        setAddressLineTwo(addressLineTwoInputValue);
+        setPostCode(postCodeInputValue);
+        setCity(cityInputValue);
+        setCountry(countryInputValue);
     }
 
     return (
@@ -88,15 +120,66 @@ export default function GeneralInfo() {
                 }
             </div>
             <div className="general-info-right">
-                <div className="misc-info-container">
-                    <p className="phone-number">60163365111</p>
-                    <p className="email">harith.akma@dontudare.com</p>
-                    <p className="address-line-1">25, Jalan 8/152A</p>
-                    <p className="address-line-2">Bukit Halil</p>
-                    <p className="postcode">57000, <span className="state">Kuala Lumpur</span></p>
-                    <p className="country">Malaysia</p>
-                </div>
-                <EditButton />
+                {isEditingGeneralInfo ? (
+                    <form className="general-info-form" onSubmit={handleEditGeneralFormSubmit}>
+                        <input
+                            type="tel"
+                            value={phoneInputValue}
+                            className="phone-input"
+                            onChange={(event) => setPhoneInputValue(event.target.value)}
+                            autoFocus
+                        />
+                        <input
+                            type="email"
+                            value={emailInputValue}
+                            className="email-input"
+                            onChange={(event) => setEmailInputValue(event.target.value)}
+                        />
+                        <input
+                            type="text"
+                            value={addressLineOneInputValue}
+                            className="address-line-one-input"
+                            onChange={(event) => setAddressLineOneInputValue(event.target.value)}
+                        />
+                        <input
+                            type="text"
+                            value={addressLineTwo}
+                            className="address-line-two-input"
+                            onChange={(event) => setAddressLineTwoInputValue(event.target.value)}
+                        />
+                        <input
+                            type="tel"
+                            value={postCode}
+                            className="postcode-input"
+                            onChange={(event) => setPostCodeInputValue(event.target.value)}
+                        />
+                        <input
+                            type="text"
+                            value={cityInputValue}
+                            className="city-input"
+                            onChange={(event) => setCityInputValue(event.target.value)}
+                        />
+                        <input
+                            type="text"
+                            value={countryInputValue}
+                            className="country-input"
+                            onChange={(event) => setCountryInputValue(event.target.value)}
+                        />
+                    </form>
+                ): (
+                    <>
+                        <div className="misc-info-container">
+                            <p className="phone-number">60163365111</p>
+                            <p className="email">harith.akma@dontudare.com</p>
+                            <p className="address-line-1">25, Jalan 8/152A</p>
+                            <p className="address-line-2">Bukit Halil</p>
+                            <p className="postcode">57000<span className="state">, Kuala Lumpur</span></p>
+                            <p className="country">Malaysia</p>
+                        </div>
+                        <EditButton onClick={handleEditGeneralInfoClick}/>
+                    </>
+                )
+                }
             </div>
             <hr className="general-info-break" />
         </div>
