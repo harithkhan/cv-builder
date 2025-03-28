@@ -1,6 +1,6 @@
 .cv-container {
     width: calc(100vw - 2rem);
-    min-width: 400px;
+    min-width: 350px;
     max-width: var(--cv-width);
     min-height: 20rem;
     border: 1px solid black;
