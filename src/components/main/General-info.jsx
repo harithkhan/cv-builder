@@ -126,49 +126,70 @@ export default function GeneralInfo() {
             <div className="general-info-right">
                 {isEditingGeneralInfo ? (
                     <form className="general-info-form" onSubmit={handleGeneralInfoFormSubmit}>
-                        <input
-                            type="tel"
-                            value={phoneInputValue}
-                            className="phone-input"
-                            onChange={(event) => setPhoneInputValue(event.target.value)}
-                            autoFocus
-                        />
-                        <input
-                            type="email"
-                            value={emailInputValue}
-                            className="email-input"
-                            onChange={(event) => setEmailInputValue(event.target.value)}
-                        />
-                        <input
-                            type="text"
-                            value={addressLineOneInputValue}
-                            className="address-line-one-input"
-                            onChange={(event) => setAddressLineOneInputValue(event.target.value)}
-                        />
-                        <input
-                            type="text"
-                            value={addressLineTwoInputValue}
-                            className="address-line-two-input"
-                            onChange={(event) => setAddressLineTwoInputValue(event.target.value)}
-                        />
-                        <input
-                            type="tel"
-                            value={postCodeInputValue}
-                            className="postcode-input"
-                            onChange={(event) => setPostCodeInputValue(event.target.value)}
-                        />
-                        <input
-                            type="text"
-                            value={cityInputValue}
-                            className="city-input"
-                            onChange={(event) => setCityInputValue(event.target.value)}
-                        />
-                        <input
-                            type="text"
-                            value={countryInputValue}
-                            className="country-input"
-                            onChange={(event) => setCountryInputValue(event.target.value)}
-                        />
+                        <label className="phone-input-container">
+                            Phone Number:
+                            <input
+                                type="tel"
+                                value={phoneInputValue}
+                                className="phone-input"
+                                onChange={(event) => setPhoneInputValue(event.target.value)}
+                                autoFocus
+                            />
+                        </label>
+                        <label className="email-input-container">
+                            Email:
+                            <input
+                                type="email"
+                                value={emailInputValue}
+                                className="email-input"
+                                onChange={(event) => setEmailInputValue(event.target.value)}
+                            />
+                        </label>
+                        <label className="address-line-one-input-container">
+                            Address Line One:
+                            <input
+                                type="text"
+                                value={addressLineOneInputValue}
+                                className="address-line-one-input"
+                                onChange={(event) => setAddressLineOneInputValue(event.target.value)}
+                            />
+                        </label>
+                        <label className="address-line-two-input-container">
+                            Address Line Two:
+                            <input
+                                type="text"
+                                value={addressLineTwoInputValue}
+                                className="address-line-two-input"
+                                onChange={(event) => setAddressLineTwoInputValue(event.target.value)}
+                            />
+                        </label>
+                        <label className="postcode-input-container">
+                            Postcode:
+                            <input
+                                type="tel"
+                                value={postCodeInputValue}
+                                className="postcode-input"
+                                onChange={(event) => setPostCodeInputValue(event.target.value)}
+                            />
+                        </label>
+                        <label className="city-input-container">
+                            City:
+                            <input
+                                type="text"
+                                value={cityInputValue}
+                                className="city-input"
+                                onChange={(event) => setCityInputValue(event.target.value)}
+                            />
+                        </label>
+                        <label className="country-input-container">
+                            Country:
+                            <input
+                                type="text"
+                                value={countryInputValue}
+                                className="country-input"
+                                onChange={(event) => setCountryInputValue(event.target.value)}
+                            />
+                        </label>
                         <div className="general-info-form-button-container">
                             <ConfirmButton onClick={handleGeneralInfoFormSubmit}/>
                             <CancelButton onClick={handleGeneralInfoCancelClick}/>

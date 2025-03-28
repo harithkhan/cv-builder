@@ -45,6 +45,17 @@
     gap: 1rem;
 }
 
+.phone-input-container,
+.email-input-container,
+.address-line-one-input-container,
+.address-line-two-input-container,
+.postcode-input-container,
+.city-input-container,
+.country-input-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .general-info-form-button-container {
     display: flex;
     justify-content: center;
