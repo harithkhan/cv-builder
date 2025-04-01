@@ -6,6 +6,21 @@
     display: flex;
 }
 
+.experience-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-input-container {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 3rem)
+}
+
+.experience-input {
+    width: 50ch;
+}
+
 @media (min-width: 768px) {
     .experience-header {
         font-size: 1.4rem;
