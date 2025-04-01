@@ -2,6 +2,10 @@
     font-size: 1.2rem;
 }
 
+.experience-title-container {
+    display: flex;
+}
+
 @media (min-width: 768px) {
     .experience-header {
         font-size: 1.4rem;
