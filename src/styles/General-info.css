@@ -54,12 +54,14 @@
 .country-input-container {
     display: flex;
     gap: 0.5rem;
+    justify-content: space-between;
 }
 
 .general-info-form-button-container {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .phone-number,
