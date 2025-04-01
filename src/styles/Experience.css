@@ -9,20 +9,32 @@
 .experience-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .experience-input-container {
     display: flex;
     justify-content: space-between;
-    width: calc(100% - 3rem)
+    width: calc(100% - 1rem);
 }
 
 .experience-input {
-    width: 50ch;
+    width: 20ch;
+}
+
+.experience-button-container {
+    display: flex;
+    margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
     .experience-header {
         font-size: 1.4rem;
+    }
+    .experience-input-container {
+        width: calc(100% - 3rem)
+    }
+    .experience-input {
+        width: 50ch;
     }
 }

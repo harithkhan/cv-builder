@@ -1,6 +1,8 @@
 import "../../styles/Experience.css";
 import EditButton from "./Edit-button";
 import { useState } from "react";
+import ConfirmButton from "./Confirm-button";
+import CancelButton from "./Cancel-button";
 
 export default function Experience() {
     const [isEditingExperience, setIsEditingExperience] = useState(false);
@@ -11,13 +13,13 @@ export default function Experience() {
     const [location, setLocation] = useState("Kuala Lumpur");
     const [locationInputValue, setLocationInputValue] = useState(location);
 
-    const [designation, setDesignation] = useState(" - Director");
+    const [designation, setDesignation] = useState("Director");
     const [designationInputValue, setDesignationInputValue] = useState(designation);
 
     const [startDate, setStartDate] = useState("September 2018");
     const [startDateInputValue, setStartDateInputValue] = useState(startDate);
 
-    const [endDate, setEndDate] = useState(" - Present");
+    const [endDate, setEndDate] = useState("Present");
     const [endDateInputValue, setEndDateInputValue] = useState(endDate);
 
     function handleEditExperienceClick() {
@@ -31,6 +33,11 @@ export default function Experience() {
         setDesignation(designationInputValue);
         setStartDate(startDateInputValue);
         setEndDate(endDateInputValue);
+        setIsEditingExperience(false);
+    }
+
+    function handleExperienceCancelClick() {
+        setIsEditingExperience(false);
     }
 
     return (
@@ -86,18 +93,22 @@ export default function Experience() {
                         value={endDateInputValue}
                     />
                 </label>
+                <div className="experience-button-container">
+                    <ConfirmButton onClick={handleExperienceFormSubmit}/>
+                    <CancelButton onClick={handleExperienceCancelClick}/>
+                </div>
             </form> :
             <>
                 <h2 className="experience-header">Experience</h2>
                 <div className="experience-container">
                     <div className="experience-title-container">
-                        <h3 className="experience-organization">IHG College,
-                            <span className="experience-location"> Kuala Lumpur</span>
-                            <span className="experience-designation"> - Director</span>
+                        <h3 className="experience-organization">{organization},
+                            <span className="experience-location"> {location}</span>
+                            <span className="experience-designation"> - {designation}</span>
                         </h3>
                         <EditButton onClick={handleEditExperienceClick} />
                     </div>
-                    <p className="start-date">September 2018<span className="end-date"> - Present</span></p>
+                    <p className="start-date">{startDate}<span className="end-date"> - {endDate}</span></p>
                     <ul className="experience-bullets-container">
                         <li className="experience-bullets">Advised and facilitated the successful acquisition of the college (legal and financial due diligence) into family business.</li>
                         <li className="experience-bullets">Increased student body to 400 +/- through management of marketing and recruitment teams.</li>
