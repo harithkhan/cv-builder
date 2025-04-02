@@ -47,6 +47,14 @@
     margin-top: 1rem;
 }
 
+.bullet-input-section {
+    width: 100%;
+}
+
+.bullet-input {
+    width: calc(100% - 1rem);
+}
+
 @media (min-width: 768px) {
     .experience-header {
         font-size: 1.4rem;
@@ -56,5 +64,8 @@
     }
     .experience-input {
         width: 50ch;
+    }
+    .bullet-input {
+        width: calc(100% - 2rem);
     }
 }

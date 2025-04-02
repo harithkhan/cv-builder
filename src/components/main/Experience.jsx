@@ -108,18 +108,24 @@ export default function Experience() {
                     <CancelButton onClick={handleExperienceCancelClick}/>
                 </div>
                 <h3 className="experience-form-header">Bullets</h3>
-                <input 
-                    onChange={(event) => setBulletOneInputValue(event.target.value)}
-                    type="textarea"
-                    className="bullet-input experience-input"
-                    value={bulletOneInputValue}
-                />
-                                <input 
-                    onChange={(event) => setBulletTwoInputValue(event.target.value)}
-                    type="textarea"
-                    className="bullet-input experience-input"
-                    value={bulletTwoInputValue}
-                />
+                <ul className="bullet-input-section">
+                    <li className="bullet-input-container">
+                        <textarea 
+                            onChange={(event) => setBulletOneInputValue(event.target.value)}
+                            type="textarea"
+                            className="bullet-input"
+                            value={bulletOneInputValue}
+                        />
+                    </li>
+                    <li className="bullet-input-container">
+                        <textarea 
+                            onChange={(event) => setBulletTwoInputValue(event.target.value)}
+                            type="textarea"
+                            className="bullet-input"
+                            value={bulletTwoInputValue}
+                        />
+                    </li>
+                </ul>
                 <div className="experience-button-container">
                     <ConfirmButton onClick={handleExperienceFormSubmit}/>
                     <CancelButton onClick={handleExperienceCancelClick}/>
