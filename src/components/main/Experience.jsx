@@ -3,6 +3,7 @@ import EditButton from "./Edit-button";
 import { useState } from "react";
 import ConfirmButton from "./Confirm-button";
 import CancelButton from "./Cancel-button";
+import Bullet from "./Bullet";
 
 export default function Experience() {
     const [isEditingExperience, setIsEditingExperience] = useState(false);
@@ -110,8 +111,12 @@ export default function Experience() {
                     </div>
                     <p className="start-date">{startDate}<span className="end-date"> - {endDate}</span></p>
                     <ul className="experience-bullets-container">
-                        <li className="experience-bullets">Advised and facilitated the successful acquisition of the college (legal and financial due diligence) into family business.</li>
-                        <li className="experience-bullets">Increased student body to 400 +/- through management of marketing and recruitment teams.</li>
+                        <Bullet 
+                            text="Advised and facilitated the successful acquisition of the college (legal and financial due diligence) into family business."
+                        />
+                        <Bullet 
+                            text="Increased student body to 400 +/- through management of marketing and recruitment teams."
+                        />
                     </ul>
                 </div>
             </>}
