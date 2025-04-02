@@ -21,6 +21,10 @@
     display: flex;
 }
 
+.cv-title {
+    font-size: 1.8rem;
+}
+
 .summary-container {
     display: flex;
     align-items: center;

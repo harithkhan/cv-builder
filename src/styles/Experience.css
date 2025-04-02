@@ -1,9 +1,15 @@
 .experience-header {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 
 .experience-title-container {
     display: flex;
+    align-items: center;
+}
+
+.start-date {
+    margin-bottom: 0.5rem;
 }
 
 .experience-form {
@@ -20,6 +26,16 @@
 
 .experience-input {
     width: 20ch;
+}
+
+.experience-organization {
+    line-height: 1.2;
+    font-size: 1.1rem;
+}
+
+.experience-designation {
+    font-style: italic;
+    font-weight: 400;
 }
 
 .experience-button-container {
