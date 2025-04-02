@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.experience-form-general-header {
+    margin-bottom: 0.4rem;
+}
+
 .experience-input-container {
     display: flex;
     justify-content: space-between;

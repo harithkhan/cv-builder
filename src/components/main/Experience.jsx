@@ -23,6 +23,12 @@ export default function Experience() {
     const [endDate, setEndDate] = useState("Present");
     const [endDateInputValue, setEndDateInputValue] = useState(endDate);
 
+    const [bulletOne, setBulletOne] = useState("Advised and facilitated the successful acquisition of the college (legal and financial due diligence) into family business.");
+    const [bulletOneInputValue, setBulletOneInputValue] = useState(bulletOne);
+
+    const [bulletTwo, setBulletTwo] = useState("Increased student body to 400 +/- through management of marketing and recruitment teams.");
+    const [bulletTwoInputValue, setBulletTwoInputValue] = useState(bulletTwo);
+
     function handleEditExperienceClick() {
         setIsEditingExperience(true);
     }
@@ -34,6 +40,8 @@ export default function Experience() {
         setDesignation(designationInputValue);
         setStartDate(startDateInputValue);
         setEndDate(endDateInputValue);
+        setBulletOne(bulletOneInputValue);
+        setBulletTwo(bulletTwoInputValue);
         setIsEditingExperience(false);
     }
 
@@ -48,6 +56,7 @@ export default function Experience() {
                 className="experience-form"
                 onSubmit={handleExperienceFormSubmit}
             >
+                <h3 className="experience-form-header">Experience Info</h3>
                 <label className="organization-input-container experience-input-container">
                     Organization:
                     <input 
@@ -98,6 +107,23 @@ export default function Experience() {
                     <ConfirmButton onClick={handleExperienceFormSubmit}/>
                     <CancelButton onClick={handleExperienceCancelClick}/>
                 </div>
+                <h3 className="experience-form-header">Bullets</h3>
+                <input 
+                    onChange={(event) => setBulletOneInputValue(event.target.value)}
+                    type="textarea"
+                    className="bullet-input experience-input"
+                    value={bulletOneInputValue}
+                />
+                                <input 
+                    onChange={(event) => setBulletTwoInputValue(event.target.value)}
+                    type="textarea"
+                    className="bullet-input experience-input"
+                    value={bulletTwoInputValue}
+                />
+                <div className="experience-button-container">
+                    <ConfirmButton onClick={handleExperienceFormSubmit}/>
+                    <CancelButton onClick={handleExperienceCancelClick}/>
+                </div>
             </form> :
             <>
                 <h2 className="experience-header">Experience</h2>
@@ -112,10 +138,10 @@ export default function Experience() {
                     <p className="start-date">{startDate}<span className="end-date"> - {endDate}</span></p>
                     <ul className="experience-bullets-container">
                         <Bullet 
-                            text="Advised and facilitated the successful acquisition of the college (legal and financial due diligence) into family business."
+                            text={bulletOne}
                         />
                         <Bullet 
-                            text="Increased student body to 400 +/- through management of marketing and recruitment teams."
+                            text={bulletTwo}
                         />
                     </ul>
                 </div>
