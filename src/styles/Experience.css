@@ -69,3 +69,12 @@
         width: calc(100% - 2rem);
     }
 }
+
+.experience-break {
+    all: unset; /* resets default browser styles */
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #ccc;
+    margin: 1rem 0;
+}

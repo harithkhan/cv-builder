@@ -152,6 +152,7 @@ export default function Experience() {
                     </ul>
                 </div>
             </>}
+            <hr className="experience-break" />
         </div>
     )
 }
