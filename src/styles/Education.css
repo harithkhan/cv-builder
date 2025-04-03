@@ -11,8 +11,36 @@
     height: inherit;
 }
 
-
-
 .education-result {
     text-decoration: underline;
+}
+
+.education-form-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.education-input-container {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 1rem);
+}
+
+.education-input {
+    width: 20ch;
+}
+
+.education-button-container {
+    display: flex;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .education-input-container {
+        width: calc(100% - 3rem)
+    }
+    .education-input {
+        width: 50ch;
+    }
 }

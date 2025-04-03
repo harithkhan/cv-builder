@@ -1,9 +1,12 @@
 import "../../styles/Education.css";
 import { useState } from "react";
 import EditButton from "./Edit-button";
+import ConfirmButton from "./Confirm-button";
+import CancelButton from "./Cancel-button";
 
 export default function Education() {
-    const [isEditingEducation, setIsEditingEducation] = useState(false);
+    const [isEditingEducationOne, setIsEditingEducationOne] = useState(false);
+    const [isEditingEducationTwo, setIsEditingEducationTwo] = useState(false);
 
     // First default education state
     const [providerOne, setProviderOne] = useState("City University London");
@@ -45,19 +48,105 @@ export default function Education() {
 
     // First default functions
     function handleFirstEditClick() {
-        setIsEditingEducation(true);
+        setIsEditingEducationOne(true);
+    }
+
+    function handleEducationOneFormSubmit() {
+        setProviderOne(providerOneInputValue);
+        setLocationOne(locationOneInputValue);
+        setCourseOne(courseOneInputValue);
+        setStartDateOne(startDateOneInputValue);
+        setEndDateOne(endDateOneInputValue);
+        setResultOne(resultOneInputValue);
+        setIsEditingEducationOne(false);
+    }
+
+    function handleEducationOneFormCancel() {
+        setIsEditingEducationOne(false);
     }
 
     // Second default functions
     function handleSecondEditClick() {
-        setIsEditingEducation(true);
+        setIsEditingEducationTwo(true);
+    }
+
+    function handleEducatoinTwoFormSubmit() {
+        setProviderTwo(providerTwoInputValue);
+        setLocationTwo(locationTwoInputValue);
+        setCourseTwo(courseTwoInputValue);
+        setStartDateTwo(startDateTwoInputValue);
+        setEndDateTwo(endDateTwoInputValue);
+        setResultTwo(resultTwoInputValue);
+        setIsEditingEducationTwo(false);
     }
 
     return (
         <div className="education-section">
-            {isEditingEducation ?
-
-            <p>Placeholder</p> :
+            {isEditingEducationOne ?
+            <form
+                className="education-form-one"
+                onSubmit={handleEducationOneFormSubmit}
+            >
+                <label className="education-input-container">
+                    Education Provider:
+                    <input
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setProviderOneInputValue(event.target.value)}
+                        value={providerOneInputValue}
+                        autoFocus
+                    />
+                </label>
+                <label className="education-input-container">
+                    Location:
+                    <input 
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setLocationOneInputValue(event.target.value)}
+                        value={locationOneInputValue}
+                    />
+                </label>
+                <label className="education-input-container">
+                    Course Name:
+                    <input 
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setCourseOneInputValue(event.target.value)}
+                        value={courseOneInputValue}
+                    />
+                </label>
+                <label className="education-input-container">
+                    Start Date:
+                    <input 
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setStartDateOneInputValue(event.target.value)}
+                        value={startDateOne}
+                    />
+                </label>
+                <label className="education-input-container">
+                    End Date:
+                    <input 
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setEndDateOneInputValue(event.target.value)}
+                        value={endDateOneInputValue}
+                    />
+                </label>
+                <label className="education-input-container">
+                    Results (Grades):
+                    <input 
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setResultOneInputValue(event.target.value)}
+                        value={resultOneInputValue}
+                    />
+                </label>
+                <div className="education-button-container">
+                    <ConfirmButton onClick={handleEducationOneFormSubmit}/>
+                    <CancelButton onClick={handleEducationOneFormCancel}/>
+                </div>
+            </form> :
             <>
                 <h2 className="education-header">Education</h2>
                 <div className="education-container">
