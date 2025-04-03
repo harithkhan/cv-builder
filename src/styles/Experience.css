@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+.experience-container {
+    margin-bottom: 1rem;
+}
+
 .start-date {
     margin-bottom: 0.5rem;
 }
