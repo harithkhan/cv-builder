@@ -242,6 +242,7 @@ export default function Education() {
                     <p className="education-result">{resultTwo}</p>
                 </div>
             </>}
+            <hr className="education-break" />
         </div>
     )
 }
