@@ -38,6 +38,7 @@
     .summary-container:hover .edit-button,
     .general-info-right:hover .edit-button,
     .experience-container:hover .edit-button,
+    .education-container:hover .edit-button,
     .edit-button:focus-within {
         visibility: visible;
   }

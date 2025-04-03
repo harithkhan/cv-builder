@@ -1,5 +1,6 @@
 import "../../styles/Education.css";
 import { useState } from "react";
+import EditButton from "./Edit-button";
 
 export default function Education() {
     const [isEditingEducation, setIsEditingEducation] = useState(false);
@@ -42,27 +43,44 @@ export default function Education() {
     const [resultTwo, setResultTwo] = useState("Second Class Upper (2:1)");
     const [resultTwoInputValue, setResultTwoInputValue] = useState(resultTwo);
 
+    // First default functions
+    function handleFirstEditClick() {
+        setIsEditingEducation(true);
+    }
+
+    // Second default functions
+    function handleSecondEditClick() {
+        setIsEditingEducation(true);
+    }
+
     return (
         <div className="education-section">
             {isEditingEducation ?
+
             <p>Placeholder</p> :
             <>
                 <h2 className="education-header">Education</h2>
                 <div className="education-container">
-                    <h3 className="education-provider">
-                        {providerOne},
-                        <span className="education-location"> {locationOne}</span>
-                        <span className="education-course"> - {courseOne}</span>
-                    </h3>
+                    <div className="education-first-line-container">
+                        <h3 className="education-provider">
+                            {providerOne},
+                            <span className="education-location"> {locationOne}</span>
+                            <span className="education-course"> - {courseOne}</span>
+                        </h3>
+                        <EditButton onClick={handleFirstEditClick}/>
+                    </div>
                     <p className="education-start-date">{startDateOne} - {endDateOne}</p>
                     <p className="education-result">{resultOne}</p>
                 </div>
                 <div className="education-container">
-                    <h3 className="education-provider">
-                        {providerTwo}
-                        <span className="education-location"> {locationTwo}</span>
-                        <span className="education-course"> - {courseTwo}</span>
-                    </h3>
+                    <div className="education-first-line-container">
+                        <h3 className="education-provider">
+                            {providerTwo}
+                            <span className="education-location"> {locationTwo}</span>
+                            <span className="education-course"> - {courseTwo}</span>
+                        </h3>
+                        <EditButton onClick={handleSecondEditClick}/>
+                    </div>
                     <p className="education-start-date">{startDateTwo} - {endDateTwo}</p>
                     <p className="education-result">{resultTwo}</p>
                 </div>

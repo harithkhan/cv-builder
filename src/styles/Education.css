@@ -2,6 +2,17 @@
     margin-bottom: 0.5rem;
 }
 
+.education-first-line-container {
+    display: flex;
+}
+
+.education-first-line-container > .edit-button,
+.education-first-line-container > .edit-button > .edit-icon {
+    height: inherit;
+}
+
+
+
 .education-result {
     text-decoration: underline;
 }
