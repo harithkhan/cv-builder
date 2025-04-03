@@ -70,13 +70,17 @@ export default function Education() {
         setIsEditingEducationTwo(true);
     }
 
-    function handleEducatoinTwoFormSubmit() {
+    function handleEducationTwoFormSubmit() {
         setProviderTwo(providerTwoInputValue);
         setLocationTwo(locationTwoInputValue);
         setCourseTwo(courseTwoInputValue);
         setStartDateTwo(startDateTwoInputValue);
         setEndDateTwo(endDateTwoInputValue);
         setResultTwo(resultTwoInputValue);
+        setIsEditingEducationTwo(false);
+    }
+
+    function handleEducationTwoFormCancel() {
         setIsEditingEducationTwo(false);
     }
 
@@ -145,6 +149,70 @@ export default function Education() {
                 <div className="education-button-container">
                     <ConfirmButton onClick={handleEducationOneFormSubmit}/>
                     <CancelButton onClick={handleEducationOneFormCancel}/>
+                </div>
+            </form> : isEditingEducationTwo ?
+            <form
+                className="education-form-two"
+                onSubmit={handleEducationTwoFormSubmit}
+            >
+                <label className="education-input-container">
+                    Education Provider:
+                    <input
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setProviderTwoInputValue(event.target.value)}
+                        value={providerTwoInputValue}
+                        autoFocus
+                    />
+                </label>
+                <label className="education-input-container">
+                    Location:
+                    <input 
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setLocationTwoInputValue(event.target.value)}
+                        value={locationTwoInputValue}
+                    />
+                </label>
+                <label className="education-input-container">
+                    Course Name:
+                    <input 
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setCourseTwoInputValue(event.target.value)}
+                        value={courseTwoInputValue}
+                    />
+                </label>
+                <label className="education-input-container">
+                    Start Date:
+                    <input 
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setStartDateTwoInputValue(event.target.value)}
+                        value={startDateTwo}
+                    />
+                </label>
+                <label className="education-input-container">
+                    End Date:
+                    <input 
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setEndDateTwoInputValue(event.target.value)}
+                        value={endDateTwoInputValue}
+                    />
+                </label>
+                <label className="education-input-container">
+                    Results (Grades):
+                    <input 
+                        type="text"
+                        className="education-input"
+                        onChange={(event) => setResultTwoInputValue(event.target.value)}
+                        value={resultTwoInputValue}
+                    />
+                </label>
+                <div className="education-button-container">
+                    <ConfirmButton onClick={handleEducationTwoFormSubmit}/>
+                    <CancelButton onClick={handleEducationTwoFormCancel}/>
                 </div>
             </form> :
             <>
