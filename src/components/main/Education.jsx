@@ -232,7 +232,7 @@ export default function Education() {
                 <div className="education-container">
                     <div className="education-first-line-container">
                         <h3 className="education-provider">
-                            {providerTwo}
+                            {providerTwo},
                             <span className="education-location"> {locationTwo}</span>
                             <span className="education-course"> - {courseTwo}</span>
                         </h3>
